@@ -21,7 +21,7 @@
 Readers can reimplement the HoMM in their work very easily by using the following function.
 
 **HoMM3**
-'''python
+''' python
 def HoMM3_loss(self, xs, xt):
         xs = xs - tf.reduce_mean(xs, axis=0)
         xt = xt - tf.reduce_mean(xt, axis=0)
