@@ -18,7 +18,8 @@
 * We have provide four functions **HoMM3**, **HoMM4**, **HoMM** and **KHoMM** conresponding to the third-order HoMM, fourth-order HoMM, Arbitrary-order moment matching, and Kernel HoMM.
 
 ## Reimplement HoMM in your work
-Readers can reimplement the HoMM in their work very easily by using the following function.
+* Readers can reimplement the HoMM in their work very easily by using the following function.
+* In our code, the $x_s$ denotes the deep features in the adapted layer. b is the batchsize and L is the number of neurons in the adapted layer. num denotes the N in our paper, which indicates the number of sampled values in the high-level tensor.
 
 **HoMM3**
 ```python
@@ -77,7 +78,7 @@ def HoMM4_loss(self, xs, xt):
 	return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
 ```
 
-* **Arbitrary-order MOment Matching**
+* **Arbitrary-order Moment Matching**
 ```python
 def HoMM(self,xs, xt, order=3, num=300000):
 	xs = xs - tf.reduce_mean(xs, axis=0)
@@ -94,7 +95,7 @@ def HoMM(self,xs, xt, order=3, num=300000):
 	HO_Xt = tf.reduce_prod(xt, axis=1)
 	HO_Xt = tf.reduce_mean(HO_Xt, axis=1)
 	return tf.reduce_mean(tf.square(tf.subtract(HO_Xs, HO_Xt)))
-```python
+```
 
  
 
