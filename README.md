@@ -21,3 +21,21 @@
 Readers can reimplement the HoMM in their work very easily by using the following function.
 
 **HoMM3**
+'''python
+def HoMM3_loss(self, xs, xt):
+        xs = xs - tf.reduce_mean(xs, axis=0)
+        xt = xt - tf.reduce_mean(xt, axis=0)
+        xs=tf.expand_dims(xs,axis=-1)
+        xs = tf.expand_dims(xs, axis=-1)
+        xt = tf.expand_dims(xt, axis=-1)
+        xt = tf.expand_dims(xt, axis=-1)
+        xs_1=tf.transpose(xs,[0,2,1,3])
+        xs_2 = tf.transpose(xs, [0, 2, 3, 1])
+        xt_1 = tf.transpose(xt, [0, 2, 1, 3])
+        xt_2 = tf.transpose(xt, [0, 2, 3, 1])
+        HR_Xs=xs*xs_1*xs_2
+        HR_Xs=tf.reduce_mean(HR_Xs,axis=0)
+        HR_Xt = xt * xt_1 * xt_2
+        HR_Xt = tf.reduce_mean(HR_Xt, axis=0)
+        return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
+'''
