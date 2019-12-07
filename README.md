@@ -40,7 +40,7 @@ def HoMM3_loss(self, xs, xt):
         return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
 ```
 
-** HoMM4
+* **HoMM4**
 ```python
 def HoMM4(self,xs,xt):
 	ind=tf.range(tf.cast(xs.shape[1],tf.int32))
