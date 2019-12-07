@@ -77,6 +77,24 @@ def HoMM4_loss(self, xs, xt):
 	return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
 ```
 
+* **Arbitrary-order MOment Matching**
+```python
+def HoMM(self,xs, xt, order=3, num=300000):
+	xs = xs - tf.reduce_mean(xs, axis=0)
+	xt = xt - tf.reduce_mean(xt, axis=0)
+	dim = tf.cast(xs.shape[1], tf.int32)
+	index = tf.random_uniform(shape=(num, dim), minval=0, maxval=dim - 1, dtype=tf.int32)
+	index = index[:, :order]
+	xs = tf.transpose(xs)
+	xs = tf.gather(xs, index)  ##dim=[num,order,batchsize]
+	xt = tf.transpose(xt)
+	xt = tf.gather(xt, index)
+	HO_Xs = tf.reduce_prod(xs, axis=1)
+	HO_Xs = tf.reduce_mean(HO_Xs, axis=1)
+	HO_Xt = tf.reduce_prod(xt, axis=1)
+	HO_Xt = tf.reduce_mean(HO_Xt, axis=1)
+	return tf.reduce_mean(tf.square(tf.subtract(HO_Xs, HO_Xt)))
+```python
 
  
 
