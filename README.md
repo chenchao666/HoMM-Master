@@ -19,7 +19,7 @@
 
 ## Reimplement HoMM in your work
 * Readers can reimplement the HoMM in their work very easily by using the following function.
-* In our code, the $x_s$ denotes the deep features in the adapted layer. b is the batchsize and L is the number of neurons in the adapted layer. num denotes the N in our paper, which indicates the number of sampled values in the high-level tensor.
+* In our code, the <img src="http://chart.googleapis.com/chart?cht=tx&chl= $x_s\in R^{b\cdot L}$" style="border:none;"> denotes the deep features in the adapted layer. b is the batchsize and L is the number of neurons in the adapted layer. num denotes the N in our paper, which indicates the number of sampled values in the high-level tensor.
 
 **HoMM3**
 ```python
