@@ -39,3 +39,44 @@ def HoMM3_loss(self, xs, xt):
         HR_Xt = tf.reduce_mean(HR_Xt, axis=0)
         return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
 ```
+
+** HoMM4
+```python
+def HoMM4(self,xs,xt):
+	ind=tf.range(tf.cast(xs.shape[1],tf.int32))
+	ind=tf.random_shuffle(ind)
+	xs=tf.transpose(xs,[1,0])
+	xs=tf.gather(xs,ind)
+	xs = tf.transpose(xs, [1, 0])
+	xt = tf.transpose(xt, [1, 0])
+	xt = tf.gather(xt, ind)
+	xt = tf.transpose(xt, [1, 0])
+	return self.HoMM4_loss(xs[:,:30],xt[:,:30])+self.HoMM4_loss(xs[:,30:60],xt[:,30:60])+self.HoMM4_loss(xs[:,60:90],xt[:,60:90])
+
+
+
+def HoMM4_loss(self, xs, xt):
+	xs = xs - tf.reduce_mean(xs, axis=0)
+	xt = xt - tf.reduce_mean(xt, axis=0)
+	xs = tf.expand_dims(xs,axis=-1)
+	xs = tf.expand_dims(xs, axis=-1)
+	xs = tf.expand_dims(xs, axis=-1)
+	xt = tf.expand_dims(xt, axis=-1)
+	xt = tf.expand_dims(xt, axis=-1)
+	xt = tf.expand_dims(xt, axis=-1)
+	xs_1 = tf.transpose(xs,[0,2,1,3,4])
+	xs_2 = tf.transpose(xs, [0, 2, 3, 1,4])
+	xs_3 = tf.transpose(xs, [0, 2, 3, 4, 1])
+	xt_1 = tf.transpose(xt, [0, 2, 1, 3,4])
+	xt_2 = tf.transpose(xt, [0, 2, 3, 1,4])
+	xt_3 = tf.transpose(xt, [0, 2, 3, 4, 1])
+	HR_Xs=xs*xs_1*xs_2*xs_3
+	HR_Xs=tf.reduce_mean(HR_Xs,axis=0)
+	HR_Xt = xt * xt_1 * xt_2*xt_3
+	HR_Xt = tf.reduce_mean(HR_Xt, axis=0)
+	return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
+```
+
+
+ 
+
