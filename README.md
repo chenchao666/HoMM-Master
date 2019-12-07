@@ -13,4 +13,5 @@
 * **requirements** Python==2.7, tensorflow==1.9
 
 ## Training
-* You can run **trainlenet.py** in 
+* **MNIST** You can run **TrainLenet.py** in HoMM-mnist.
+* **Office&Office-Home** You can run **finetune.py** in HoMM_office/resnet/.
