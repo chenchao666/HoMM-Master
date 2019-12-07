@@ -15,3 +15,9 @@
 ## Training
 * **MNIST** You can run **TrainLenet.py** in HoMM-mnist.
 * **Office&Office-Home** You can run **finetune.py** in HoMM_office/resnet/.
+* We have provide four functions **HoMM3**, **HoMM4**, **HoMM** and **KHoMM** conresponding to the third-order HoMM, fourth-order HoMM, Arbitrary-order moment matching, and Kernel HoMM.
+
+## Reimplement HoMM in your work
+Readers can reimplement the HoMM in their work very easily by using the following function.
+
+**HoMM3**
