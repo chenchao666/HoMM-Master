@@ -1,4 +1,4 @@
-# HoMM: Higher-order Moment Matching for Unsupervised Domain Adaptation
+# HoMM: Higher-order Moment Matching for Unsupervised Domain Adaptation (AAAI-2020)
 
 ## HoMM-Master
 <div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img1.PNG" width="450" /></div>
