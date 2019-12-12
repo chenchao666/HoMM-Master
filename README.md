@@ -10,7 +10,7 @@
 ## Setup
 * **Dataset** The code as well as the dataset can be downloaded here [HoMM in MNIST](https://drive.google.com/open?id=167tVIBI2dVa0D18i6CiM-hicFJ3DJFzX) and [HoMM in Office&Office-Home](https://drive.google.com/open?id=1-OSkyh1Vzg_sxWJ6u4nvuQ3FRfKmZ-UF)
 
-* **requirements** Python==2.7, tensorflow==1.9
+* **requirements** Python==2.7, tensorflow==1.9, opencv
 
 ## Training
 * **MNIST** You can run **TrainLenet.py** in HoMM-mnist.
@@ -102,5 +102,8 @@ def HoMM(self,xs, xt, order=3, num=300000):
 <div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img5.PNG" width="800" /></div>
 
 <div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img6.PNG" width="600" /></div>
+
+<div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img6.PNG" width="600" /></div>
+
 
 
