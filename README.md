@@ -99,5 +99,5 @@ def HoMM(self,xs, xt, order=3, num=300000):
 
 
 ## Results
-<div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img5.PNG" width="450" /></div>
+<div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img5.PNG" width="600" /></div>
 
