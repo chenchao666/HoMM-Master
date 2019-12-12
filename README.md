@@ -97,5 +97,7 @@ def HoMM(self,xs, xt, order=3, num=300000):
 	return tf.reduce_mean(tf.square(tf.subtract(HO_Xs, HO_Xt)))
 ```
 
- 
+
+## Results
+<div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img4.PNG" width="600" /></div>
 
