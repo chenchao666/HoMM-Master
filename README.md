@@ -103,7 +103,7 @@ def HoMM(self,xs, xt, order=3, num=300000):
 
 <div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img6.PNG" width="600" /></div>
 
-<div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img7.PNG" width="800" /></div>
+<div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img7.PNG" width="900" /></div>
 
 
 
