@@ -34,14 +34,15 @@ def HoMM3_loss(self, xs, xt):
         xs_2 = tf.transpose(xs, [0, 2, 3, 1])
         xt_1 = tf.transpose(xt, [0, 2, 1, 3])
         xt_2 = tf.transpose(xt, [0, 2, 3, 1])
-        HR_Xs=xs*xs_1*xs_2
-        HR_Xs=tf.reduce_mean(HR_Xs,axis=0)
+        HR_Xs=xs*xs_1*xs_2   # dim: b*L*L*L
+        HR_Xs=tf.reduce_mean(HR_Xs,axis=0)   #dim: L*L*L
         HR_Xt = xt * xt_1 * xt_2
         HR_Xt = tf.reduce_mean(HR_Xt, axis=0)
         return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
 ```
 
 * **HoMM4**
+* The adapted layer has 90 neurons, we divided them into 3 group with each group 30 neurons.
 ```python
 def HoMM4(self,xs,xt):
 	ind=tf.range(tf.cast(xs.shape[1],tf.int32))
@@ -71,8 +72,8 @@ def HoMM4_loss(self, xs, xt):
 	xt_1 = tf.transpose(xt, [0, 2, 1, 3,4])
 	xt_2 = tf.transpose(xt, [0, 2, 3, 1,4])
 	xt_3 = tf.transpose(xt, [0, 2, 3, 4, 1])
-	HR_Xs=xs*xs_1*xs_2*xs_3
-	HR_Xs=tf.reduce_mean(HR_Xs,axis=0)
+	HR_Xs=xs*xs_1*xs_2*xs_3    # dim: b*L*L*L*L
+	HR_Xs=tf.reduce_mean(HR_Xs,axis=0)  # dim: L*L*L*L
 	HR_Xt = xt * xt_1 * xt_2*xt_3
 	HR_Xt = tf.reduce_mean(HR_Xt, axis=0)
 	return tf.reduce_mean(tf.square(tf.subtract(HR_Xs, HR_Xt)))
