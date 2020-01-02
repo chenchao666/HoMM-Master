@@ -20,6 +20,7 @@
 ## Reimplement HoMM in your work
 * Readers can reimplement the HoMM in their work very easily by using the following function.
 * In our code, **xs** and **xt** denotes source and target deep features in the adapted layer. the dimension of **xs** and **xt** is b*L where b is the batchsize and L is the number of neurons in the adapted layer. num denotes the N in our paper, which indicates the number of sampled values in the high-level tensor.
+* **It is worth noting that the relu activation function can not be applied to the adapted layer, as relu activation function will make most of the values in the high-level tensor to be zero, which will make our HoMM fail. Therefore, we adopt tanh activation function in the adapted layer**
 
 **HoMM3**
 ```python
