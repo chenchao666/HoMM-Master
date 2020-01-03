@@ -108,4 +108,12 @@ def HoMM(self,xs, xt, order=3, num=300000):
 <div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img7.PNG" width="900" /></div>
 
 
-
+## Citation
+* If you fid it is helpful for you, please cite our paper
+@inproceedings{chen2020HoMM,
+  title={HoMM: Higher-order Moment Matching for Unsupervised Domain Adaptation },
+  author={Chao Chen, Zhihang Fu, Zhihong Chen, Sheng Jin, Zhaowei Cheng, Xinyu Jin, Xian-Sheng Hua},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={34},
+  year={2020}
+}
