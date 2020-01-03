@@ -4,7 +4,7 @@
 <div align=center><img src="https://github.com/chenchao666/HoMM-Master/blob/master/img/img1.PNG" width="450" /></div>
 
 
-* This repository contains code for our paper **HoMM: Higher-order Moment Matching for Unsupervised Domain Adaptation**
+* This repository contains code for our paper **HoMM: Higher-order Moment Matching for Unsupervised Domain Adaptation** [Download paper](https://arxiv.org/abs/1912.11976)
 * If you have any question about our paper or code, please don't hesitate to contact with me ahucomputer@126.com, we will update our repository accordingly
 
 ## Setup
