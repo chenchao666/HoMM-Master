@@ -109,7 +109,7 @@ def HoMM(self,xs, xt, order=3, num=300000):
 
 
 ## Citation
-* If you fid it is helpful for you, please cite our paper
+* If you find it helpful for you, please cite our paper
 ```
 @inproceedings{chen2020HoMM,
   title={HoMM: Higher-order Moment Matching for Unsupervised Domain Adaptation},
